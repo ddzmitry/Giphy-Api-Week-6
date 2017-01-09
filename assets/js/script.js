@@ -1,3 +1,6 @@
+
+
+$(document).ready(function() {
 $('body').html(`
 	<input class = "input form-control"  placeholder="Looking for...." type='text'  id='search-for'>
     <button type='button' class= " btn btn-success"  id='search-button'>Search</button>
@@ -190,5 +193,7 @@ $("#search-button").on('click', function() {
 $("#clear").on('click', function() {
 	responsiveVoice.speak(`Oh no!! Page is clear! `);
 	$('#frame').empty();
+
+});
 
 });
