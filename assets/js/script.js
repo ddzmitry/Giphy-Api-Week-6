@@ -50,10 +50,17 @@ $(this).removeClass('ShakeAnimation');
 $(document).one("click", ".input", function() {
 
 
-responsiveVoice.speak(`Write something here! And press search button!`);
+responsiveVoice.speak(`Write something here! And press enter or search button!`);
 
 });
 
+$("#search-for").keydown(function(e){
+
+	    if (e.which == 13) {
+        confBtn();
+    }
+    
+});
 
 
 //clicking on toopick fires and adds pictures
@@ -124,7 +131,7 @@ function showMePictures(lookingFor) {
 			var bufferIndex = randomPicturesIndexes[p]; //index set
 
 			console.log(`${response.data[bufferIndex].images.original_still.url}`); // pulling URL's for pictures and adding images
-			$('#frame').append(`<img class="notMoving" src="${response.data[bufferIndex].images.original_still.url}" data-id="${response.data[bufferIndex].id}" height="150" width="150""> `);
+			$('#frame').prepend(`<img class="notMoving" src="${response.data[bufferIndex].images.original_still.url}" data-id="${response.data[bufferIndex].id}" height="150" width="150""> `);
 			//-----------------------------------------------------
 			// 	console.log(response.data[p].images.original_still.url);
 			// 	console.log(response.data[p].images.original.url);
@@ -165,15 +172,7 @@ function addTheButton() {
 
 
 }
-
-
-
-
-
-
-
-		//adding topick with conditions if name match with previous or input enpty it will not do it, if it doesnt then it will
-$("#search-button").on('click', function() {
+function confBtn() {
 
 //bad word not adding
 for ( j in badwords) {
@@ -202,7 +201,15 @@ for ( j in badwords) {
 		addTheButton();
 	}
 
-});
+}
+
+
+
+
+
+
+		//adding topick with conditions if name match with previous or input enpty it will not do it, if it doesnt then it will
+$("#search-button").on('click', confBtn );
 
 	//clear press will do something
 $("#clear").on('click', function() {
