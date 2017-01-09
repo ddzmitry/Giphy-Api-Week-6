@@ -155,11 +155,11 @@ String.prototype.capitalizeFirstLetter = function() {
 function addTheButton() {
 	// console.log(searchItem.val());
 	// console.log(subject);
-
+	// str = str.replace(/\s/g, '')
 	console.log(searchItem.val().capitalizeFirstLetter())
 	stringToCapitalize = searchItem.val().capitalizeFirstLetter();
 
-	$('#searchButtons').append(`<button type = "button" class="infoPic buttonIn btn btn-info" data-name = ${stringToCapitalize} > ${stringToCapitalize} </button>`);
+	$('#searchButtons').append(`<button type = "button" class="infoPic buttonIn btn btn-info" data-name = ${stringToCapitalize.replace(/\s/g, '')} > ${stringToCapitalize} </button>`);
 	responsiveVoice.speak(`Adding Category of: ${stringToCapitalize}`);
 
 
@@ -169,7 +169,7 @@ function addTheButton() {
 
 		//adding topick with conditions if name match with previous or input enpty it will not do it, if it doesnt then it will
 $("#search-button").on('click', function() {
-
+						console.log(searchItem.val())
 	for (i in subject) {
 		tempBoolean = true;
 		if ((searchItem.val().toLowerCase() === subject[i].toLowerCase()) || ((searchItem.val().toLowerCase() === ''))) {

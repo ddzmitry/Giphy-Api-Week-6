@@ -1,6 +1,7 @@
 button {
+	display:flex;
 	margin: 10px;
-	width: 100px;
+	width: auto;
 }
 body {
 	background: url(../images/white.jpg) no-repeat center center fixed;
