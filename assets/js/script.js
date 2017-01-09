@@ -96,7 +96,7 @@ function showMePictures(lookingFor) {
 //-----------------------------------------------------
 
 //main AJAX call
-	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + lookingFor + "/&api_key=dc6zaTOxFJmzC&limit=100";
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + lookingFor + "/&api_key=dc6zaTOxFJmzC&limit=100";
 
 	var pictures = [];
 	var links = [];
